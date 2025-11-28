@@ -59,7 +59,7 @@ Section:NewToggle("No Attacks", "God Mode (Noclip)", function(state)
     if state then
 game.Workspace.System.EnemyAttacks.Parent = game.ReplicatedStorage
     else
-game.ReplicatedStorage.EnemyAttacks.Parent = game.Workspace
+game.ReplicatedStorage.EnemyAttacks.Parent = game.Workspace.System
 	end
 end)
 
@@ -74,6 +74,14 @@ pos = CFrame.new(pos.X,pos.Y,pos.Z)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
 end)
 tool.Parent = game.Players.LocalPlayer.Backpack
+end)
+
+Section:NewButton("Fast Start", "Auto collect souls", function()
+game.Workspace:FindFirstChild("Start").Size = Vector3.new(1, 1, 1)
+game.Workspace:FindFirstChild("Start").CFrame = player.Character.HumanoidRootPart.CFrame
+wait(0.00000000001)
+game.Workspace:FindFirstChild("Start").CFrame = CFrame.new(9989.8828125, 672.8535766601562, 1920.8428955078125)
+game.Workspace:FindFirstChild("Start").Size = Vector3.new(1000, 15, 15)
 end)
 
 
