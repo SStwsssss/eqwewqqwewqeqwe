@@ -30,14 +30,6 @@ Section:NewSlider("Speed Hack", "Adding Speed To Your Humanoid", 200, 0, functio
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
 end)
 
-Section:NewButton("KILL","Killing for 1 Second (Have BYpass)", function()
-for i,d in pairs(game.Workspace:GetDescendants()) do
-    if d.ClassName == 'Humanoid' and d.Parent.Name ~= game.Players.LocalPlayer.Name then
-        d.Health = 0
-    end
-end
-end)
-
 Section:NewToggle("GodMode", "God Mode (Noclip)", function(state)
     if state then
         for _, part in pairs(character:GetChildren()) do
@@ -101,6 +93,8 @@ player.Character:PivotTo(CFrame.new(21.011157989501953, 212.97463989257812, -986
 end)
 
 Section:NewButton("Admin Room","Killing for 1 Second (Have BYpass)", function()
+game.Workspace.RegularLobby.AdminRoom.Detect.Disabled = true
+game.Workspace.RegularLobby.AdminRoom.Detect:Destroy()
 player.Character:PivotTo(CFrame.new(-5172.24365234375, 212.97462463378906, -2559.025146484375))
 end)
 
